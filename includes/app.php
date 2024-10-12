@@ -61,7 +61,8 @@ $router->map('GET|POST','/search', function(){
  
 
 $router->map('GET|POST','/admin', function(){
-	
+
+
 	if(auth()->isLoggedIn()){
 		redirect('/dashboard');
 		return;
@@ -99,6 +100,7 @@ if(auth()->isLoggedIn()){
 
 	}
 	$router->map('GET|POST','/logout', function(){
+
 		auth()->logOut();
 		redirect('/');
 	});

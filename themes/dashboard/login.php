@@ -43,6 +43,10 @@ catch(Exception $e){
 
 }
 
+
+//only admin can login
+$user = db()::table('users')->first();
+
 ?>
 
 <!DOCTYPE html>
@@ -82,11 +86,11 @@ catch(Exception $e){
 
             <div class="form-group">
               <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo $user->email; ?>">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password"  name="password" placeholder="Password">
+              <input type="password" class="form-control" id="password"  name="password" placeholder="Password" value="12345">
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" name="remember" id="remember-me">
