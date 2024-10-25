@@ -98,8 +98,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         redirect('/dashboard/'.$type.'/edit?id='.$post_id);
     }
 } 
- 
-  
 $categories= db()::table('srz_cats')->where([
     'type' =>'movies'
     ])->orderBy('name','asc')->get();

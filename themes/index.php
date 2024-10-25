@@ -15,9 +15,6 @@ $total_posts= db()::table('srz_cpt')->where([
     ])->count();
 
 $total_pages= ceil($total_posts/$limit);
-
-
-
 $posts = db()::table('srz_cpt')->where([
     'post_type' => $type,
     'status' => 1
